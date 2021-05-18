@@ -18,8 +18,8 @@ Use ASRT SDK if you need a speech recognition library that:
 - Can call ASRT api server module for developers to test models easily.
 Read the documentation at: https://github.com/nl8590687/ASRT_SpeechRecognition/wiki
 For a detailed overview of what makes ASRT special, see:
-https://asrt.ailemon.me
-ASRT is compatible with Python 3.0-3.6
+https://asrt.ailemon.net
+ASRT is compatible with Python 3.0-3.7
 and is distributed under the GPL v3.0 license.
 '''
 
@@ -27,15 +27,16 @@ setup(name='asrt_sdk',
 	version='1.0.0',
 	description='A python client sdk for ASRT Deep-Learning-Based Auto Speech Recognition Toolkit',
 	long_description=long_description,
+	long_description_content_type = 'text/markdown',
 	author='ailemon',
 	author_email='ailemon@ailemon.me',
 	license='GPL v3.0',
-	url='https://asrt.ailemon.me',
+	url='https://asrt.ailemon.net',
 	download_url = "https://pypi.python.org/pypi/asrt_sdk",
 	project_urls={
 		"Bug Tracker": "https://github.com/nl8590687/ASRT_SpeechRecognition/issues",
-		"Documentation": "https://asrt.ailemon.me/docs",
-		"Source Code": "https://github.com/nl8590687/ASRT_SpeechRecognition",
+		"Documentation": "https://asrt.ailemon.net/docs",
+		"Source Code": "https://github.com/nl8590687/ASRT_SDK_Python3",
 	},
 	python_requires='>=3.0',
 	packages=find_packages(),
@@ -53,7 +54,8 @@ setup(name='asrt_sdk',
 		'Intended Audience :: Developers',
 		'Intended Audience :: Education',
 		'Intended Audience :: Science/Research',
-		'License :: OSI Approved :: GPL v3.0 License',
+		('License :: OSI Approved :: '
+         'GNU General Public License v3 or later (GPLv3+)'),
 		"Operating System :: OS Independent",
 		'Programming Language :: Python :: 3',
 		'Programming Language :: Python :: 3.6'

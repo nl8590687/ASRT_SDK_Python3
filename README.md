@@ -2,7 +2,7 @@
 
 ASRT Python3 SDK
 
-[ASRT语音识别项目主页](https://asrt.ailemon.me/) | [ASRT项目文档](https://asrt.ailemon.me/docs/)
+[ASRT语音识别项目主页](https://asrt.ailemon.net/) | [ASRT项目文档](https://asrt.ailemon.net/docs/)
 
 ## 安装
 ```
