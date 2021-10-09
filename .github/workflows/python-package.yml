@@ -32,7 +32,7 @@ jobs:
         tar zxf portaudio_v19.tgz
         cd portaudio
         mkdir bin
-        ./configure && make && make DESTDIR=./bin install
+        ./configure && make && make DESTDIR=$(pwd)/bin install
         python -m pip install pyaudio
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Lint with flake8
