@@ -31,7 +31,8 @@ jobs:
         wget http://files.portaudio.com/archives/pa_stable_v190700_20210406.tgz -O portaudio_v19.tgz
         tar zxf portaudio_v19.tgz
         cd portaudio
-        ./configure && make && make install
+        mkdir bin
+        ./configure && make && make DESTDIR=./bin install
         python -m pip install pyaudio
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Lint with flake8
