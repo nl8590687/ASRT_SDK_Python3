@@ -1,3 +1,28 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+#
+# Copyright 2016-2099 Ailemon.net
+#
+# This file is part of ASRT Speech Recognition Tool Python SDK.
+#
+# ASRT is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+# ASRT is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with ASRT.  If not, see <https://www.gnu.org/licenses/>.
+# ============================================================================
+
+"""
+@author: nl8590687
+ASRT语音识别Python SDK 安装
+"""
+
 try:
     from setuptools import setup #enables develop
 except ImportError:
@@ -24,12 +49,12 @@ and is distributed under the GPL v3.0 license.
 '''
 
 setup(name='asrt_sdk',
-	version='1.0.0',
-	description='A python client sdk for ASRT Deep-Learning-Based Auto Speech Recognition Toolkit',
+	version='1.1.0',
+	description='A python client caller sdk for ASRT Deep-Learning-Based Auto Speech Recognition Toolkit',
 	long_description=long_description,
 	long_description_content_type = 'text/markdown',
 	author='ailemon',
-	author_email='ailemon@ailemon.me',
+	author_email='ailemon@ailemon.net',
 	license='GPL v3.0',
 	url='https://asrt.ailemon.net',
 	download_url = "https://pypi.python.org/pypi/asrt_sdk",
@@ -58,6 +83,7 @@ setup(name='asrt_sdk',
          'GNU General Public License v3 or later (GPLv3+)'),
 		"Operating System :: OS Independent",
 		'Programming Language :: Python :: 3',
-		'Programming Language :: Python :: 3.6'
+		'Programming Language :: Python :: 3.6',
+		'Programming Language :: Python :: 3.7'
 	]
 )

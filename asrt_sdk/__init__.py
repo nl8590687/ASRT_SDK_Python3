@@ -19,5 +19,7 @@ and is distributed under the GPL v3.0 license.
 from . import Recorder, SpeechRecognizer
 from .Recorder import AudioRecorder
 from .SpeechRecognizer import SpeechRecognizer
+from .SpeechRecognizer import get_speech_recognizer, HttpSpeechRecognizer
+from .utils import read_wav_datas
 
 __version__ = '1.0.0'
