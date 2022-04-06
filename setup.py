@@ -38,18 +38,18 @@ Keras, TensorFlow, or MxNet.
 Use ASRT SDK if you need a speech recognition library that:
 - Allows for easy and fast prototyping for speech recognition
   (through user friendliness, modularity, and extensibility).
-- Supports both Keras and other Deep learning framework(on future) for speech recognition.
+- Supports both TensorFlow and other Deep learning framework(on future) for speech recognition.
 - Applications can only run on CPU. 
 - Can call ASRT api server module for developers to test models easily.
-Read the documentation at: https://github.com/nl8590687/ASRT_SpeechRecognition/wiki
+Read the documentation at: https://wiki.ailemon.net/docs/asrt-doc/asrt-doc-1dkgqc3871ktt
 For a detailed overview of what makes ASRT special, see:
 https://asrt.ailemon.net
-ASRT is compatible with Python 3.0-3.7
+ASRT is compatible with Python 3.0-3.10
 and is distributed under the GPL v3.0 license.
 '''
 
 setup(name='asrt_sdk',
-	version='1.1.0',
+	version='1.1.1',
 	description='A python client caller sdk for ASRT Deep-Learning-Based Auto Speech Recognition Toolkit',
 	long_description=long_description,
 	long_description_content_type = 'text/markdown',
@@ -59,8 +59,8 @@ setup(name='asrt_sdk',
 	url='https://asrt.ailemon.net',
 	download_url = "https://pypi.python.org/pypi/asrt_sdk",
 	project_urls={
-		"Bug Tracker": "https://github.com/nl8590687/ASRT_SpeechRecognition/issues",
-		"Documentation": "https://asrt.ailemon.net/docs",
+		"Bug Tracker": "https://github.com/nl8590687/ASRT_SDK_Python3/issues",
+		"Documentation": "https://wiki.ailemon.net/docs/asrt-doc/asrt-doc-1dkgqc3871ktt",
 		"Source Code": "https://github.com/nl8590687/ASRT_SDK_Python3",
 	},
 	python_requires='>=3.0',
@@ -71,7 +71,6 @@ setup(name='asrt_sdk',
 	install_requires=[
 		'numpy',
 		'wave',
-		'pyaudio',
 		'requests',
 	],
 	

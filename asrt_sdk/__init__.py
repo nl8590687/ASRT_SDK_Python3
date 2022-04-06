@@ -16,10 +16,8 @@ and is distributed under the GPL v3.0 license.
 '''
 #from __future__ import absolute_import
 
-from . import Recorder, SpeechRecognizer
-from .Recorder import AudioRecorder
-from .SpeechRecognizer import SpeechRecognizer
-from .SpeechRecognizer import get_speech_recognizer, HttpSpeechRecognizer
+from .SpeechRecognizer import BaseSpeechRecognizer, HttpSpeechRecognizer
+from .SpeechRecognizer import get_speech_recognizer
 from .utils import read_wav_datas
 
-__version__ = '1.0.0'
+__version__ = '1.1.1'
