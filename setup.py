@@ -30,7 +30,7 @@ except ImportError:
 
 from setuptools import find_packages
 
-long_description = '''
+LONG_DESCRIPTION = '''
 ASRT_SDK is a client sdk package for ASRT. 
 ASRT is a high-level deep learning API for speech recognition,
 written in Python and capable of running on top of
@@ -50,8 +50,8 @@ and is distributed under the GPL v3.0 license.
 
 setup(name='asrt_sdk',
 	version='1.1.1',
-	description='A python client caller sdk for ASRT Deep-Learning-Based Auto Speech Recognition Toolkit',
-	long_description=long_description,
+	description='A python sdk for ASRT Speech Recognition Toolkit',
+	long_description=LONG_DESCRIPTION,
 	long_description_content_type = 'text/markdown',
 	author='ailemon',
 	author_email='ailemon@ailemon.net',
@@ -73,7 +73,7 @@ setup(name='asrt_sdk',
 		'wave',
 		'requests',
 	],
-	
+
 	classifiers=[
 		'Intended Audience :: Developers',
 		'Intended Audience :: Education',

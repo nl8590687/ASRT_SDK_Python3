@@ -25,18 +25,18 @@ ASRT语音识别服务Python SDK调用样例
 
 import asrt_sdk
 
-host = '127.0.0.1'
-port = '20001'
-protocol = 'http'
-speech_recognizer = asrt_sdk.get_speech_recognizer(host, port, protocol)
+HOST = '127.0.0.1'
+PORT = '20001'
+PROTOCOL = 'http'
+speech_recognizer = asrt_sdk.get_speech_recognizer(HOST, PORT, PROTOCOL)
 
-filename = 'A11_0.wav'
-result = speech_recognizer.recognite_file(filename)
+FILENAME = 'A11_0.wav'
+result = speech_recognizer.recognite_file(FILENAME)
 print(result)
 print(result.result)
 
 
-wave_data = asrt_sdk.read_wav_datas(filename)
+wave_data = asrt_sdk.read_wav_datas(FILENAME)
 result = speech_recognizer.recognite_speech(wave_data.str_data,
                                             wave_data.sample_rate,
                                             wave_data.channels,
