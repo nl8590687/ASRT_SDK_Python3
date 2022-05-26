@@ -24,9 +24,9 @@ ASRT语音识别Python SDK 语音识别接口调用类库
 """
 
 import json
-import requests
 from .utils import AsrtApiSpeechRequest, AsrtApiLanguageRequest, AsrtApiResponse
 from .utils import read_wav_datas
+from .network import get_http_session
 
 def get_speech_recognizer(host:str, port:str, protocol:str):
     '''
@@ -105,7 +105,8 @@ class HttpSpeechRecognizer(BaseSpeechRecognizer):
         '''
         request_body = AsrtApiSpeechRequest(wav_data, frame_rate, channels, byte_width)
         headers = {'Content-Type': 'application/json'}
-        response_object = requests.post(self._url_ + self.sub_path + '/all',
+        http_request = get_http_session()
+        response_object = http_request.post(self._url_ + self.sub_path + '/all',
                                     headers=headers,
                                     data=request_body.to_json())
         response_body_dict = json.loads(response_object.text)
@@ -119,7 +120,8 @@ class HttpSpeechRecognizer(BaseSpeechRecognizer):
         '''
         request_body = AsrtApiSpeechRequest(wav_data, frame_rate, channels, byte_width)
         headers = {'Content-Type': 'application/json'}
-        response_object = requests.post(self._url_ + self.sub_path + '/speech',
+        http_request = get_http_session()
+        response_object = http_request.post(self._url_ + self.sub_path + '/speech',
                                     headers=headers,
                                     data=request_body.to_json())
         response_body_dict = json.loads(response_object.text)
@@ -133,7 +135,8 @@ class HttpSpeechRecognizer(BaseSpeechRecognizer):
         '''
         request_body = AsrtApiLanguageRequest(sequence_pinyin)
         headers = {'Content-Type': 'application/json'}
-        response_object = requests.post(self._url_ + self.sub_path + '/language',
+        http_request = get_http_session()
+        response_object = http_request.post(self._url_ + self.sub_path + '/language',
                                     headers=headers,
                                     data=request_body.to_json())
         response_body_dict = json.loads(response_object.text)

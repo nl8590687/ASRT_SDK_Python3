@@ -29,6 +29,7 @@ except ImportError:
     from distutils.core import setup
 
 from setuptools import find_packages
+from asrt_sdk.version import __version__ as asrt_sdk_version
 
 LONG_DESCRIPTION = '''
 ASRT_SDK is a client sdk package for ASRT. 
@@ -49,7 +50,7 @@ and is distributed under the GPL v3.0 license.
 '''
 
 setup(name='asrt_sdk',
-	version='1.1.1',
+	version=asrt_sdk_version,
 	description='A python sdk for ASRT Speech Recognition Toolkit',
 	long_description=LONG_DESCRIPTION,
 	long_description_content_type = 'text/markdown',
@@ -81,8 +82,6 @@ setup(name='asrt_sdk',
 		('License :: OSI Approved :: '
          'GNU General Public License v3 or later (GPLv3+)'),
 		"Operating System :: OS Independent",
-		'Programming Language :: Python :: 3',
-		'Programming Language :: Python :: 3.6',
-		'Programming Language :: Python :: 3.7'
+		'Programming Language :: Python :: 3'
 	]
 )
