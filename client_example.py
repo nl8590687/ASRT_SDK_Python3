@@ -33,7 +33,9 @@ speech_recognizer = asrt_sdk.get_speech_recognizer(HOST, PORT, PROTOCOL)
 FILENAME = 'A11_0.wav'
 result = speech_recognizer.recognite_file(FILENAME)
 print(result)
-print(result.result)
+for index in range(0, len(result)):
+    item = result[index]
+    print("第", index, "段:", item.result)
 
 
 wave_data = asrt_sdk.read_wav_datas(FILENAME)
