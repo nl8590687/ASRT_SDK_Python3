@@ -187,6 +187,30 @@ class HttpSpeechRecognizer(BaseSpeechRecognizer):
             raise Exception("Unormal data format is responsed by ASRT API server with HTTP protocol: " +
                 exception_info.__str__())
 
+    def recognite_long(self, wav_data, frame_rate, channels, byte_width):
+        '''
+        完整识别wav长语音序列为文本, 会自动分段
+        '''
+        if frame_rate != 16000:
+            raise Exception('Unsupport wave sample rate `' + str(frame_rate) +'`')
+
+        if channels != 1:
+            raise Exception('Unsupport wave channels number `' + str(channels) +'`')
+
+        if byte_width != 2:
+            raise Exception('Unsupport wave byte width `' + str(byte_width) +'`')
+
+        asrt_result = list()
+        duration = 2*16000*10
+        for index in range(0, len(wav_data)//duration+1):
+            rsp = self.recognite(wav_data=wav_data[index*duration:min((index+1)*duration, len(wav_data))],
+                            frame_rate=frame_rate,
+                            channels=channels,
+                            byte_width=byte_width
+                            )
+            asrt_result.append(rsp)
+        return asrt_result
+
     def recognite_file(self, filename):
         '''
         识别一条wav语音文件为文本
@@ -194,24 +218,7 @@ class HttpSpeechRecognizer(BaseSpeechRecognizer):
         wave_data = read_wav_datas(filename)
         str_data = wave_data.str_data
         frame_rate = wave_data.sample_rate
-        if frame_rate != 16000:
-            raise Exception('Unsupport wave sample rate `' + str(frame_rate) +'`')
-
+        
         channels = wave_data.channels
-        if channels != 1:
-            raise Exception('Unsupport wave channels number `' + str(channels) +'`')
-
         byte_width = wave_data.byte_width
-        if byte_width != 2:
-            raise Exception('Unsupport wave byte width `' + str(byte_width) +'`')
-
-        asrt_result = list()
-        duration = 2*16000*10
-        for index in range(0, len(str_data)//duration+1):
-            rsp = self.recognite(wav_data=str_data[index*duration:min((index+1)*duration, len(str_data))],
-                            frame_rate=frame_rate,
-                            channels=channels,
-                            byte_width=byte_width
-                            )
-            asrt_result.append(rsp)
-        return asrt_result
+        return self.recognite_long(str_data, frame_rate, channels, byte_width)
