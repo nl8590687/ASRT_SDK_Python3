@@ -29,7 +29,9 @@ import asrt_sdk
 HOST = '127.0.0.1'
 PORT = '20001'
 PROTOCOL = 'http'
+SUB_PATH = ''
 speech_recognizer = asrt_sdk.get_speech_recognizer(HOST, PORT, PROTOCOL)
+speech_recognizer.sub_path = SUB_PATH
 
 FILENAME = 'A11_0.wav'
 result = speech_recognizer.recognite_file(FILENAME)
