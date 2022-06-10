@@ -73,6 +73,9 @@ setup(name='asrt_sdk',
 		'numpy',
 		'wave',
 		'requests',
+		'grpcio',
+		'grpcio-tools',
+		'protobuf'
 	],
 
 	classifiers=[

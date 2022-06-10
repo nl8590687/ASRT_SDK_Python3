@@ -35,4 +35,4 @@ ASRT is compatible with Python 3.0-3.9
 and is distributed under the GPL v3.0 license.
 '''
 
-__version__ = '1.1.2'
+__version__ = '1.2.0'
